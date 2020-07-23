@@ -1,0 +1,28 @@
+# slash-test
+
+## Demo
+http://ec2-52-77-253-199.ap-southeast-1.compute.amazonaws.com/
+
+## Configuration
+Make sure to add your own `MONGOURI` from your [mLab](http://mlab.com) database in `config/keys.js`.
+
+```javascript
+module.exports = {
+  mongoURI: "YOUR_MONGO_URI_HERE",
+  secretOrKey: "secret"
+};
+```
+
+## Quick Start
+
+```javascript
+// Install dependencies for server & client
+npm install && npm run client-install
+
+// Run client & server with concurrently
+npm run dev
+// Server runs on http://localhost:5000 and client on http://localhost:3000
+
+// Run for production
+npm run start
+```
