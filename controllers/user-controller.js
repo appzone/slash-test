@@ -62,9 +62,9 @@ const loginHandler = (req, res) => {
     if (!user) {
       return res.status(404).json({ emailnotfound: "Email not found" });
     }
-    // if(user.failed > 3) {
-    //   return res.status(404).json({ emailnotfound: "Account locked" });
-    // }
+    if(user.failed > 3) {
+      return res.status(404).json({ emailnotfound: "Account locked" });
+    }
 
     // Check password
     bcrypt.compare(password, user.password).then(isMatch => {
