@@ -35,9 +35,9 @@ module.exports = function validateRegisterInput(data) {
     errors.password = "Password must be at least 8 characters";
   }
 
-  // if(!Validator.matches(data.password, /(?=^.{8,}$)(?=.*\d)(?=.*[!@#$%^&amp;*]+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/g)) {
-  //   errors.password = "Password is not strong. Must contain lowercase, uppercase, numeric, symbol, and minimum 8 digit";
-  // }
+  if(!Validator.matches(data.password, /(?=^.{8,}$)(?=.*\d)(?=.*[!@#$%^&amp;*]+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/g)) {
+    errors.password = "Password is not strong. Must contain lowercase, uppercase, numeric, symbol, and minimum 8 digit";
+  }
 
   if (!Validator.equals(data.password, data.password2)) {
     errors.password2 = "Passwords must match";

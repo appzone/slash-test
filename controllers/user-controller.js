@@ -91,18 +91,14 @@ const loginHandler = (req, res) => {
           }
         );
       } else {
-        // User.findOneAndUpdate( { email }, 
-        //   { $inc : {'failed' : 1} },
-        //   { new: false }
-        // ).then((data) => {
-        //   return res
-        //   .status(400)
-        //   .json({ passwordincorrect: "Password incorrect" });
-        // }) 
+        User.findOneAndUpdate( { email }, 
+          { $inc : {'failed' : 1} },
+          { new: false }
+        ).then((data) => {
           return res
           .status(400)
           .json({ passwordincorrect: "Password incorrect" });
-
+        }) 
       }
     });
   });
