@@ -19,10 +19,10 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  // failed: {
-  //   type: Number,
-  //   default: 0,
-  // }
+  failed: {
+    type: Number,
+    default: 0,
+  }
 });
 
 module.exports = User = mongoose.model("users", UserSchema);
